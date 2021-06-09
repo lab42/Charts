@@ -18,8 +18,12 @@ jobs:
           exec: |
             mkdir -p build
             helm package ./User --destination build && \
-            cd build && \
-            helm repo index .
+
+      - name: Build index🔧 
+        uses: WyriHaximus/github-action-helm3@v2
+        working-directory: build
+        run: helm repo index .
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
