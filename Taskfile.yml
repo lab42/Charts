@@ -23,11 +23,11 @@ tasks:
   
   build:packages:
     cmds:
-      - mkdir -p build
-      - helm package ./user --destination build 
+      - mkdir -p packages
+      - helm package ./user --destination packages 
 
   build:index:
     dir: packages
     cmds:
       - helm repo index .
-      - 'echo -e "{{ .GREEN }}Successfully generated index and saved it to: build/index.yaml{{ .NC }}"'
+      - 'echo -e "{{ .GREEN }}Successfully generated index and saved it to: packages/index.yaml{{ .NC }}"'
