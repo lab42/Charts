@@ -1,0 +1,8 @@
+.DS_Store
+build
+
+# Various IDEs
+.project
+.idea/
+*.tmproj
+.vscode/
