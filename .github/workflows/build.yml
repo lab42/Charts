@@ -24,7 +24,7 @@ jobs:
         uses: lab42/Helm@3.6.0
         with:
           helm: version
-          
+
       - name: Creatwe build directory
         run: mkdir build
 
