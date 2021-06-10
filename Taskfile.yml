@@ -5,29 +5,29 @@ version: "3"
 silent: true
 
 vars:
-  BLUE: '\033[0;34m'
-  GREEN: '\033[0;32m'
-  NC: '\033[0m' # No Color
+  packages: ("User")
 
 tasks:
   default:
     cmds:
       - task --list
 
-  build:
-    desc: Build packages and index
+  lint:
+    desc: Lint packages with Helm
+    deps: [has:helm]
     cmds:
-      - echo -e "{{ .BLUE }}Generating packages and index{{ .NC }}"
-      - task: build:packages
-      - task: build:index
-  
-  build:packages:
-    cmds:
-      - mkdir -p packages
-      - helm package User --destination packages 
+      - |
+        pkgs={{.packages}}
+        for i in "${pkgs[@]}"
+        do 
+          task lint:package pkg=$i; 
+        done
 
-  build:index:
-    dir: packages
+  lint:package:
     cmds:
-      - helm repo index .
-      - 'echo -e "{{ .GREEN }}Successfully generated index and saved it to: packages/index.yaml{{ .NC }}"'
+      - helm lint {{ .pkg }}
+
+  has:helm:
+    preconditions:
+      - sh: command -v helm
+        msg: Install Helm first
