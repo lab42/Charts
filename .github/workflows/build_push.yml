@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        helm_packages: [./User]
+        helm_packages: [ "./User" ]
 
     steps:
       - name: Checkout 🛎️
