@@ -15,7 +15,7 @@ jobs:
       - name: Build user package
         uses: lab42/Helm@3.6.0
         with:
-          helm: package User --destination build
+          helm: helm package User --destination build
       
       - name: Build index
         uses: lab42/Helm@3.6.0
