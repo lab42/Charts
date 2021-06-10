@@ -11,6 +11,12 @@ tasks:
   default:
     cmds:
       - task --list
+  
+  install:
+    desc: Install packages used in this repo via Homebrew
+    deps: [has:brew]
+    cmds:
+      - brew bundle install
 
   lint:
     desc: Lint packages with Helm
@@ -23,6 +29,7 @@ tasks:
           task lint:package pkg=$i; 
         done
 
+  # Private tasks
   lint:package:
     cmds:
       - helm lint {{ .pkg }}
@@ -31,3 +38,8 @@ tasks:
     preconditions:
       - sh: command -v helm
         msg: Install Helm first
+  
+  has:brew:
+    preconditions:
+      - sh: command -v brew
+        msg: Install Homebrew first
