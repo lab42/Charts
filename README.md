@@ -4,7 +4,7 @@
 
 Charts are build automatically and served via Github Pages.
 
-Be aware that these charts should be designwd for usage with Skaffold.
+Be aware that these charts should be designed for usage with Skaffold.
 
 ## Adding the Helm repo
 
