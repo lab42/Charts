@@ -28,10 +28,15 @@ jobs:
         with:
           helm: version
 
+      - name: Helm lint
+        uses: lab42/Helm@3.6.0
+        with:
+          helm: /bin/helm lint ${{ matrix.helm_packages }}
+
       - name: Helm package
         uses: lab42/Helm@3.6.0
         with:
-          helm: package ${{ matrix.helm_packages }} --destination build
+          helm: /bin/helm package ${{ matrix.helm_packages }} --destination build
       
       - name: Helm index
         uses: lab42/Helm@3.6.0
