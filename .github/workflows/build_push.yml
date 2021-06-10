@@ -12,14 +12,15 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Build 🔧 
-        uses: WyriHaximus/github-action-helm3@v2
+      - name: Build user package
+        uses: lab42/Helm@3.6.0
         with:
-          exec: |
-            mkdir -p build
-            helm package ./User --destination build && \
-            cd build && \
-            helm repo index .
+          helm: package ./User --destination build
+      
+      - name: Build user package
+        uses: lab42/Helm@3.6.0
+        with:
+          helm: helm repo index ./build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
