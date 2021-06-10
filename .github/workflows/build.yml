@@ -43,6 +43,9 @@ jobs:
         with:
           helm: repo index build
 
+      - name: list debug
+        run: ls -alh 
+
       - name: Helm move index
         run: mv index.yaml build/index.yaml
 
