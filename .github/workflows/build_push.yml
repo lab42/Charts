@@ -15,12 +15,15 @@ jobs:
       - name: Build user package
         uses: lab42/Helm@3.6.0
         with:
-          helm: package ./User --destination build
+          helm: package User --destination build
       
-      - name: Build user package
+      - name: Build index
         uses: lab42/Helm@3.6.0
         with:
-          helm: helm repo index ./build
+          helm: helm repo index build
+
+      - name: Move index
+        run: mv index.yaml build/index.yaml
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
