@@ -24,7 +24,7 @@ tasks:
   build:packages:
     cmds:
       - mkdir -p packages
-      - helm package ./User --destination packages 
+      - helm package User --destination packages 
 
   build:index:
     dir: packages

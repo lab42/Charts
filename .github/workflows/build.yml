@@ -31,12 +31,12 @@ jobs:
       - name: Helm lint
         uses: lab42/Helm@3.6.0
         with:
-          helm: /bin/helm lint ${{ matrix.helm_packages }}
+          helm: lint User
 
       - name: Helm package
         uses: lab42/Helm@3.6.0
         with:
-          helm: /bin/helm package ${{ matrix.helm_packages }} --destination build
+          helm: package User --destination build
       
       - name: Helm index
         uses: lab42/Helm@3.6.0
