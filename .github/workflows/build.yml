@@ -31,7 +31,7 @@ jobs:
       - name: Helm lint
         uses: lab42/Helm@3.6.0
         with:
-          helm: lint User
+          helm: lint
 
       - name: Helm package
         uses: lab42/Helm@3.6.0
