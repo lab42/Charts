@@ -15,12 +15,12 @@ jobs:
       - name: Build user package
         uses: lab42/Helm@3.6.0
         with:
-          helm: helm package User --destination build
+          helm: /bin/helm package User --destination build
       
       - name: Build index
         uses: lab42/Helm@3.6.0
         with:
-          helm: helm repo index build
+          helm: /bin/helm repo index build
 
       - name: Move index
         run: mv index.yaml build/index.yaml
