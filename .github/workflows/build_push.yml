@@ -25,11 +25,6 @@ jobs:
         with:
           helm: version
 
-      - name: Helm lint
-        uses: lab42/Helm@3.6.0
-        with:
-          helm: lint ${{ matrix.helm_packages }}
-
       - name: Helm package
         uses: lab42/Helm@3.6.0
         with:
