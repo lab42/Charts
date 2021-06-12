@@ -62,8 +62,8 @@ jobs:
       - name: Helm deploy repo
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          branch: gh-pages
+          folder: build
 
   release:
     runs-on: ubuntu-latest
@@ -76,9 +76,10 @@ jobs:
         run: |
           git pull --tags
           major_minor=$(date +%y.%-m)
+          rev=$(git rev-parse --short HEAD)
           latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
-          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${version}-${rev}" >> $GITHUB_ENV
 
       - name: Release
         env:
