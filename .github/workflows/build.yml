@@ -55,10 +55,9 @@ jobs:
         run: |
           git pull --tags
           major_minor=$(date +%y.%-m)
-          rev=$(git rev-parse --short HEAD)
           latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
-          echo "RELEASE_VERSION=${version}-${rev}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
 
       - name: Download all packages
         uses: actions/download-artifact@v2
@@ -86,10 +85,9 @@ jobs:
         run: |
           git pull --tags
           major_minor=$(date +%y.%-m)
-          rev=$(git rev-parse --short HEAD)
           latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
-          echo "RELEASE_VERSION=${version}-${rev}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
 
       - name: Release
         env:
