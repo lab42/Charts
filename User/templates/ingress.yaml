@@ -10,4 +10,4 @@ spec:
       kind: Rule
       services:
         - name: {{ .Chart.Name }}
-          port: 8080
+          port: 8000
