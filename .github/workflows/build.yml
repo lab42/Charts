@@ -59,6 +59,7 @@ jobs:
           cd build
           git checkout gh-pages
           rm -rf .git 
+          cd ../
 
       - name: Download all packages
         uses: actions/download-artifact@v2
@@ -95,4 +96,4 @@ jobs:
         run: |
           git tag ${{ env.RELEASE_VERSION }}
           git push --tags
-          gh release create ${{ env.RELEASE_VERSION }} --notes "Helm Charts ${{ env.HELM_VERSION }}"
+          gh release create ${{ env.RELEASE_VERSION }}
