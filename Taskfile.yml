@@ -23,7 +23,7 @@ tasks:
     cmds:
       - git checkout main
       - git pull
-      - git checkout -b {{ .name }}
+      - git checkout -b feature/{{ .name }}
 
   lint:
     desc: Lint packages with Helm
