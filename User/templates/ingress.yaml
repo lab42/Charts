@@ -11,5 +11,3 @@ spec:
       services:
         - name: user
           port: 8080
-      middlewares:
-        - name: user-stripprefix
