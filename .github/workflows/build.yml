@@ -66,7 +66,7 @@ jobs:
           git clone https://github.com/lab42/Charts.git build
           cd build
           git checkout gh-pages
-          rm -rf .git
+          rm -rf .git 
 
       - name: Download all packages
         uses: actions/download-artifact@v2
@@ -81,9 +81,6 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          single-commit: true
-          silent: true
-          clean: true
 
   Release:
     runs-on: ubuntu-latest
