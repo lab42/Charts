@@ -1,5 +1,0 @@
-apiVersion: v2
-name: user
-description: User service
-type: application
-version: 0.1.0
