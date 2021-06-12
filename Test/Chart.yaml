@@ -1,5 +1,0 @@
-apiVersion: v2
-name: test
-description: Test service
-type: application
-version: 0.1.0

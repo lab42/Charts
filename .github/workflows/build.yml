@@ -8,12 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        helm_packages: 
-          - User
-          - Test
 
     steps:
       - name: Checkout
@@ -27,15 +21,15 @@ jobs:
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
 
-      - name: Helm lint
+      - name: Helm lint User
         uses: lab42/Helm@21.6.2
         with:
-          helm: lint ${{ matrix.helm_packages }}
+          helm: lint User
 
-      - name: Helm package
+      - name: Helm package User
         uses: lab42/Helm@21.6.2
         with:
-          helm: package ${{ matrix.helm_packages }} --destination build
+          helm: package User --destination build
       
       - name: Helm index
         uses: lab42/Helm@21.6.2
