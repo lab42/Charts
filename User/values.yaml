@@ -7,13 +7,13 @@ deployment:
   pullPolicy: IfNotPresent
   network:
     name: http
-    port: 8080
+    port: 8000
     protocol: TCP
 
 service:
   network:
     name: http
-    port: 8080
+    port: 8000
     protocol: TCP
 
 ingress:
