@@ -1,13 +1,13 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: user
+  name: {{ .Chart.Name }}
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`{{ .Values.ingress.host}}`) && PathPrefix(`/user`)
+    - match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/user`)
       kind: Rule
       services:
-        - name: user
+        - name: {{ .Chart.Name }}
           port: 8080
