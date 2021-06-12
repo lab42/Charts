@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.PKG_VERSION }}
-          path: build/*.tgz
+          path: build
           retention-days: 1
 
   deploy:
