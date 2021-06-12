@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   user:
   - apiVersion: v2
-    created: "2021-06-12T17:15:20.328616018Z"
+    created: "2021-06-12T17:18:45.339073341Z"
     description: User service
-    digest: d8b9c2653943255a8ecddc1a997792acd9498b6df76f68278030f38dd283c7a7
+    digest: fccd03d4f9e22eb5a84db514a0351f5f01e76fa2caa404dfabd123782047564d
     name: user
     type: application
     urls:
     - user-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-06-12T17:15:20.328337407Z"
+    created: "2021-06-12T17:18:45.338750835Z"
     description: User service
     digest: c9be8d979b18cd315c1825ee7ad71807da9dede57fb35129fe5f673452fffde1
     name: user
@@ -20,7 +20,7 @@ entries:
     - user-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
-    created: "2021-06-12T17:15:20.328025895Z"
+    created: "2021-06-12T17:18:45.338421829Z"
     description: User service
     digest: 4021b72ac90aa7cce99ea7914c8ebfdce3f888c7a8523ed8f15cc464efa8a066
     name: user
@@ -28,4 +28,4 @@ entries:
     urls:
     - user-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-12T17:15:20.327542276Z"
+generated: "2021-06-12T17:18:45.337886619Z"
