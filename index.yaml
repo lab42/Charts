@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   traefik-dashboard:
   - apiVersion: v2
-    created: "2021-06-12T20:44:16.20508191Z"
+    created: "2021-06-12T21:17:39.241177613Z"
     description: Traefik-dashboard
-    digest: e8ff8fcfc33764bc574abe11771d2021fd86e37af70923e30dfcf2e539dae5b2
+    digest: 8ece4effcef41e38bbe3d5e07ab44916401bcb26bda4c4d686085c18bf20ba67
     name: traefik-dashboard
     type: application
     urls:
@@ -12,16 +12,16 @@ entries:
     version: 0.1.0
   user:
   - apiVersion: v2
-    created: "2021-06-12T20:44:16.206398012Z"
+    created: "2021-06-12T21:17:39.242304981Z"
     description: User service
-    digest: 9128cf82fd3a6e1018099c4d0aa8245d19fdfd7480739aff982aa24904e98141
+    digest: 913bca0970f570a8c59f0594034d64322d3e4e5435a1a2f8b6cd7725a769175a
     name: user
     type: application
     urls:
     - user-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2021-06-12T20:44:16.205987811Z"
+    created: "2021-06-12T21:17:39.242036565Z"
     description: User service
     digest: 2a8f101711b323d328752fe6c9effad41a3f5265ed1cfa0a26c3bbad2784a8b5
     name: user
@@ -30,7 +30,7 @@ entries:
     - user-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-06-12T20:44:16.205685011Z"
+    created: "2021-06-12T21:17:39.241730846Z"
     description: User service
     digest: c9be8d979b18cd315c1825ee7ad71807da9dede57fb35129fe5f673452fffde1
     name: user
@@ -39,7 +39,7 @@ entries:
     - user-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
-    created: "2021-06-12T20:44:16.205369911Z"
+    created: "2021-06-12T21:17:39.24146053Z"
     description: User service
     digest: 4021b72ac90aa7cce99ea7914c8ebfdce3f888c7a8523ed8f15cc464efa8a066
     name: user
@@ -47,4 +47,4 @@ entries:
     urls:
     - user-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-12T20:44:16.20461541Z"
+generated: "2021-06-12T21:17:39.240789689Z"
