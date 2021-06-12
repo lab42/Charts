@@ -51,14 +51,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Set release version (CalVer)
-        run: |
-          git pull --tags
-          major_minor=$(date +%y.%-m)
-          latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
-          version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
-          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
-
       - name: Download previous packages
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
