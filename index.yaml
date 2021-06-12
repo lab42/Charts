@@ -2,12 +2,12 @@ apiVersion: v1
 entries:
   user:
   - apiVersion: v2
-    created: "2021-06-12T16:52:26.737158268Z"
+    created: "2021-06-12T16:54:45.349098109Z"
     description: User service
-    digest: da2565b9f180e5aa708b9feaedc55ff1d9ba06a61ef55e4215d07392c8cc76ce
+    digest: a941f7a5625f701e72333da0c19b2fa9553706fac49dd176089037f4250a3cf5
     name: user
     type: application
     urls:
     - user-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-12T16:52:26.736637645Z"
+generated: "2021-06-12T16:54:45.348429908Z"
