@@ -18,6 +18,13 @@ tasks:
     cmds:
       - brew bundle install
 
+  feature:
+    desc: Create a feature branch
+    cmds:
+      - git checkout main
+      - git pull
+      - git checkout -b {{ .name }}
+
   lint:
     desc: Lint packages with Helm
     deps: [has:helm]
