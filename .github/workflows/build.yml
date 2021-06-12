@@ -65,7 +65,7 @@ jobs:
         run: |
           git clone https://github.com/lab42/Charts.git build
           cd build
-          git checkout -b gh-pages
+          git checkout gh-pages
           rm -rf .git
 
       - name: Download all packages
@@ -83,6 +83,7 @@ jobs:
           folder: build
           single-commit: true
           silent: true
+          clean: true
 
   Release:
     runs-on: ubuntu-latest
