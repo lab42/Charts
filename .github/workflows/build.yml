@@ -58,13 +58,11 @@ jobs:
           latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
-          echo "PREVIOUS_VERSION=$(git tag -l --sort=-creatordate )" >> $GITHUB_ENV
 
       - name: Download previous packages
         run: |
-          git clone git@github.com:lab42/Charts.git packages
-          mkdir -p build
-          cp -r packages/${{ env.PREVIOUS_VERSION }}/*.tgx build/
+          git clone git@github.com:lab42/Charts.git build
+          git checkout -b gh-pages
 
       - name: Download all packages
         uses: actions/download-artifact@v2
@@ -79,7 +77,8 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          target-folder: ${{ env.RELEASE_VERSION }}
+          single-commit: true
+          silent: true
 
   Release:
     runs-on: ubuntu-latest
