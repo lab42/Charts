@@ -1,0 +1,19 @@
+# Default values for testing.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  replicaCount: 1
+  pullPolicy: IfNotPresent
+  network:
+    name: http
+    port: 8080
+    protocol: TCP
+
+service:
+  network:
+    name: http
+    port: 8080
+    protocol: TCP
+
+resources: {}
