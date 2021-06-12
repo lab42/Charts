@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint:
+  Lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,9 +21,9 @@ jobs:
         with:
           helm: lint ${{ matrix.package }}
 
-  package:
+  Package:
     runs-on: ubuntu-latest
-    needs: lint
+    needs: Lint
     strategy:
       matrix:
         package:
@@ -44,9 +44,9 @@ jobs:
           path: build
           retention-days: 1
 
-  deploy:
+  Deploy:
     runs-on: ubuntu-latest
-    needs: package
+    needs: Package
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
@@ -58,6 +58,13 @@ jobs:
           latest_version=$(git tag -l --sort=-creatordate "${major_minor}.*" | head -1 | cut -d'.' -f3)
           version=$(if test -z ${latest_version}; then echo "${major_minor}.0"; else echo "${major_minor}.$((${latest_version}+1))"; fi)
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+          echo "PREVIOUS_VERSION=$(git tag -l --sort=-creatordate )" >> $GITHUB_ENV
+
+      - name: Download previous packages
+        run: |
+          git clone git@github.com:lab42/Charts.git packages
+          mkdir -p build
+          cp -r packages/${{ env.RELEASE_VERSION }}/*.tgx build/
 
       - name: Download all packages
         uses: actions/download-artifact@v2
@@ -74,9 +81,9 @@ jobs:
           folder: build
           target-folder: ${{ env.RELEASE_VERSION }}
 
-  release:
+  Release:
     runs-on: ubuntu-latest
-    needs: package
+    needs: Package
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
