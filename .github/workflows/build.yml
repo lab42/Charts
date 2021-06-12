@@ -48,6 +48,11 @@ jobs:
       - name: Download all packages
         uses: actions/download-artifact@v2
 
+      - name: Move all packages
+        run: |
+          mkdir -p build
+          mv *-$(git rev-parse --short HEAD)/*.tgz build
+
       - name: Helm index
         uses: lab42/Helm@21.6.2
         with:
