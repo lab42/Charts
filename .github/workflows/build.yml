@@ -13,6 +13,7 @@ jobs:
       matrix:
         helm_packages: 
           - User
+          - Test
 
     steps:
       - name: Checkout
