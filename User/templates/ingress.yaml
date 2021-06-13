@@ -25,7 +25,7 @@ spec:
       kind: Rule
       services:
         - name: {{ .Chart.Name }}-realize
-          port: 8000
+          port: 5001
       middlewares:
         - name: realize-stripprefix
 ---
