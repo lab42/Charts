@@ -24,7 +24,7 @@ spec:
     - match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/user/realize`)
       kind: Rule
       services:
-        - name: {{ .Chart.Name }}-realize
+        - name: {{ .Chart.Name }}
           port: 5001
       middlewares:
         - name: realize-stripprefix
