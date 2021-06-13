@@ -9,3 +9,17 @@ spec:
     - name: {{ .Values.service.network.name }}
       port: {{ .Values.service.network.port }}
       protocol: {{ .Values.service.network.protocol }}
+{{ if .Values.development }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-realize
+spec:
+  selector:
+    app: {{ .Chart.Name }}-realize
+  ports:
+    - name: realize
+      port: 5001
+      protocol: http
+{{ end }}

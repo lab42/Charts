@@ -11,3 +11,31 @@ spec:
       services:
         - name: {{ .Chart.Name }}
           port: 8000
+{{ if .Values.development }}
+---
+apiVersion: v1
+kind: IngressRoute
+metadata:
+  name: {{ .Chart.Name }}-realize
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/user/realize`)
+      kind: Rule
+      services:
+        - name: {{ .Chart.Name }}-realize
+          port: 8000
+      middlewares:
+        - name: realize-stripprefix
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: realize-stripprefix
+spec:
+  stripPrefix:
+    prefixes:
+      - /user/realize
+
+{{ end }}
