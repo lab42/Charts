@@ -69,8 +69,6 @@ jobs:
         uses: actions/download-artifact@v2
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          name: build
 
       - name: Helm index
         uses: lab42/Helm@v21.6.1-916e8c0
