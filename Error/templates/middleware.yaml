@@ -1,0 +1,12 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: error-nginx
+spec:
+  errors:
+    status:
+      - 502-504
+    query: /{status}
+    service:
+      name: error-nginx-service
+      port: 1323
