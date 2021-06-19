@@ -67,6 +67,8 @@ jobs:
 
       - name: Download all packages
         uses: actions/download-artifact@v2
+        with:
+          name: build
 
       - name: Helm index
         uses: lab42/Helm@v21.6.1-916e8c0
