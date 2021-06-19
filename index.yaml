@@ -1,10 +1,20 @@
 apiVersion: v1
 entries:
+  error:
+  - apiVersion: v2
+    created: "2021-06-19T17:48:22.459115571Z"
+    description: Error middleware for Traefik
+    digest: f0fe6acedd6197c7564d253f3f4b9953cc5f4c2b690d3ef1959ff4822e35fe67
+    name: error
+    type: application
+    urls:
+    - error-0.4.0.tgz
+    version: 0.4.0
   traefik-dashboard:
   - apiVersion: v2
-    created: "2021-06-19T17:25:20.121637212Z"
+    created: "2021-06-19T17:48:22.459336678Z"
     description: Traefik-dashboard
-    digest: a3ac58bf6148d8fed68d1ba0230e354cb9139bd54bb5e1e88918097f1ccfd149
+    digest: e4bb95cae3327f739d4ffd589eb7f7be12a34aa20b242532c33a29e6a694c561
     name: traefik-dashboard
     type: application
     urls:
@@ -12,16 +22,16 @@ entries:
     version: 0.1.0
   user:
   - apiVersion: v2
-    created: "2021-06-19T17:25:20.122653034Z"
+    created: "2021-06-19T17:48:22.460516014Z"
     description: User service
-    digest: 0f11e95fe7546fdfea90d8951f8554d3306b769d5037f5cacc7b8f25e851404d
+    digest: 1d3fa6c9da0f68562a98f567f28e354bdb2f9b964f3091525209b14cd69fad87
     name: user
     type: application
     urls:
     - user-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2021-06-19T17:25:20.122401628Z"
+    created: "2021-06-19T17:48:22.460176603Z"
     description: User service
     digest: 2a8f101711b323d328752fe6c9effad41a3f5265ed1cfa0a26c3bbad2784a8b5
     name: user
@@ -30,7 +40,7 @@ entries:
     - user-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-06-19T17:25:20.122153923Z"
+    created: "2021-06-19T17:48:22.459862594Z"
     description: User service
     digest: c9be8d979b18cd315c1825ee7ad71807da9dede57fb35129fe5f673452fffde1
     name: user
@@ -39,7 +49,7 @@ entries:
     - user-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
-    created: "2021-06-19T17:25:20.121900718Z"
+    created: "2021-06-19T17:48:22.459624687Z"
     description: User service
     digest: 4021b72ac90aa7cce99ea7914c8ebfdce3f888c7a8523ed8f15cc464efa8a066
     name: user
@@ -47,4 +57,4 @@ entries:
     urls:
     - user-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-19T17:25:20.121294505Z"
+generated: "2021-06-19T17:48:22.458671758Z"
