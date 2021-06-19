@@ -59,7 +59,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          git clone https://github.com/lab42/Charts.git build
+          git clone git@github.com:lab42/Charts.git build
           cd build
           git checkout gh-pages
           rm -rf .git 
