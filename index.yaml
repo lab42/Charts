@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   error:
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.284363332Z"
+    created: "2021-07-01T00:16:51.207516979Z"
     description: Error middleware for Traefik
-    digest: b0495e871ccb60d075ebc9ad44fac9fddcf883388dc69cb721997627b3e43c07
+    digest: 6201e0ec05a7af8e03523cbee8b62aff7fd2bdbfd6d548c114046c2d73ebc829
     name: error
     type: application
     urls:
@@ -12,9 +12,9 @@ entries:
     version: 0.4.0
   traefik-dashboard:
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.284557347Z"
+    created: "2021-07-01T00:16:51.207734787Z"
     description: Traefik-dashboard
-    digest: be8659f3982b8de316e83f35e7f0c154d16915a0692a9a31f703a231ef9d9e5c
+    digest: 824060d08f2b61fe03c3662f85b26c138b541d236e0c62d036d9a84ece5749e3
     name: traefik-dashboard
     type: application
     urls:
@@ -22,16 +22,16 @@ entries:
     version: 0.1.0
   user:
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.285729037Z"
+    created: "2021-07-01T00:16:51.209041938Z"
     description: User service
-    digest: 917245e1095cfbb255489c659bc64da126235144e4a3db8a21909f14a2e9a214
+    digest: a59d4a3fc7a076429f89b23edf80729d5604d8d38692081681136ea90d914023
     name: user
     type: application
     urls:
     - user-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.285404112Z"
+    created: "2021-07-01T00:16:51.208754027Z"
     description: User service
     digest: 2a8f101711b323d328752fe6c9effad41a3f5265ed1cfa0a26c3bbad2784a8b5
     name: user
@@ -40,7 +40,7 @@ entries:
     - user-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.285024983Z"
+    created: "2021-07-01T00:16:51.208376012Z"
     description: User service
     digest: c9be8d979b18cd315c1825ee7ad71807da9dede57fb35129fe5f673452fffde1
     name: user
@@ -49,7 +49,7 @@ entries:
     - user-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
-    created: "2021-06-19T18:37:24.284796165Z"
+    created: "2021-07-01T00:16:51.208033699Z"
     description: User service
     digest: 4021b72ac90aa7cce99ea7914c8ebfdce3f888c7a8523ed8f15cc464efa8a066
     name: user
@@ -57,4 +57,4 @@ entries:
     urls:
     - user-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-19T18:37:24.283899197Z"
+generated: "2021-07-01T00:16:51.207068161Z"
